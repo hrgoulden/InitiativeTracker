@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/addCharacter.js"></script>
+	</head>
+	
+	<body>
+		<div id="characterContainer"> 
+		</div>
+		
+		<div id="characterAdderContainer">
+			<p id="adder">hover to add character</p>
+			<div id="characterAdder">
+				<form id = "addDetails" onsubmit="return addCharacter()">
+					Name: <input type="text" id="addName">
+					AC: <input type="text" id="addAC"> 
+					Max HP: <input type="text" id="addMaxHP"> 
+					<input type="submit"  value="Submit" style="display: none;">
+				</form>
+				<div id="addButtonWrapper">
+					<button id="addButton" onclick="addCharacter()"> add </button>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>
+
+
+
+<!-- The original debug characterBlock, removed from characterContainer
+
+			<div id="characterBlock">
+				<button type="button" id="closeButton" onclick="this.parentElement.parentElement.removeChild(this.parentElement)">&#10006 </button>
+				<div id = characterDetails>
+					<p><input type="text" id="name" value="Balborion"></p>
+					<p>AC: <input type="text" id="AC" value="22"> 
+						Max HP: <input type="text" id="maxHP" value="80"> 
+						Current HP: <input type="text" id="currentHP" value="80">
+						Damage Taken: <input type="text" id="damageTaken" value="20"></p>
+				</div>
+				<div>
+					<textarea rows="1">NOTES</textarea>
+				</div>
+			</div>
+			<script>
+			var el = document.getElementById('damageTaken');
+			if(el){
+				document.getElementById("damageTaken").addEventListener("keyup", function(event) {
+					event.preventDefault();
+					if (event.keyCode === 13){
+						document.getElementById("currentHP").value = 
+							document.getElementById("currentHP").value - document.getElementById("damageTaken").value;
+						document.getElementById("damageTaken").value = "";
+						//alert('butp');
+					}
+				}
+			)};	
+			</script>
+-->

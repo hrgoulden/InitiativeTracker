@@ -1,0 +1,133 @@
+body {
+	background-color: #EEE;
+	font-family: Calibri, sans-serif;
+}
+
+p{
+	margin: 0;
+}
+
+input {
+	width: 40px;
+	background-color: #d2a479;
+	border: 0;
+}
+
+textarea {
+	background-color: #601f1f;
+	color: white;
+	width: 99%;
+}
+
+#characterBlock{
+	border-radius: 7px;
+    border: 2px solid black;
+	max-width: 600px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #d2a479;
+}
+
+#damageTaken{
+	background-color: white;
+	border-color: black;
+	border: 1px solid black;
+	padding: 3px;
+	text-align: center;
+	width: 25px;
+}
+
+#closeButton{
+	color: white;
+	float: right;
+	background-color: black;
+}
+
+#closeButton:hover{
+	color: black;
+	background-color: white;
+}
+
+#characterDetails{
+	/*float: left;
+	/*text-align: right;*/
+}	
+
+#name{
+	text-align: left;
+	width: 90%;
+	max-width: 550px;
+	font-size: 25px;
+	font-family: "OptimusPrincepsSemiBold", "Goudy Old Style", Calibri, sans-serif;
+	/*text-decoration: none;
+	/*border: 3px solid #cccccc;*/
+}
+
+#maxHP, #currentHP{
+	width: 40px;
+}
+
+#Notes{
+	text-align: left;
+	width: 9%;
+}
+
+#adder{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 20px;
+	width: 100%;
+	background: #999;
+	text-align: center;
+}
+
+#characterAdderContainer{
+	position: fixed;
+	left: 0px;
+	bottom: 0px;
+	height: 90px;
+	width: 100%;
+}
+
+#characterAdder{
+	display: none;
+	border-radius: 7px;
+    border: 2px solid black;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: gray;
+	height: 90px;
+	color: white;
+	text-align: center;
+}	
+
+#characterAdder input{
+	background-color: white;
+	width: 100px;
+	padding: 3px;
+	border: 1px solid black;
+}
+
+#addName{
+	width: 120px;
+}
+
+#characterAdder:hover{
+	display: block;
+}
+
+#adder:hover + #characterAdder{
+	display: block;
+}
+
+#addButtonWrapper{
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+}
+
+
+
+
