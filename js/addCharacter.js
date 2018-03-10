@@ -93,7 +93,7 @@ function addCharacter(){
 		
 	newBlockDiv.appendChild(newNotesDiv);	
 	
-	var newCharacter = new Character(newBlockDiv, document.getElementById("addInitiative").value);
+	var newCharacter = new Character(newBlockDiv, Number(document.getElementById("addInitiative").value));
 	placeByInitiative(newCharacter);
 	clearAddDetails();
 	
@@ -136,7 +136,6 @@ function placeByInitiative(newCharacter){
 function removeDiv(characterDiv){
 	initiativeArray.splice(locateDivIndex(characterDiv), 1);
 	characterDiv.parentElement.removeChild(characterDiv);
-	
 }
 
 function locateDivIndex(characterDiv){
