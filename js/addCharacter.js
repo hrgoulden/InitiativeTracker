@@ -1,3 +1,5 @@
+var initiativeArray = [];
+
 function addCharacter(){
 	
 	if ((document.getElementById("addName").value == "") &&
@@ -7,28 +9,40 @@ function addCharacter(){
 		return false;
 	}
 	
+	if ((document.getElementById("addInitiative").value == "") ||
+	isNaN(document.getElementById("addInitiative").value)){
+		return false;
+	}
+	
 	var newBlockDiv = document.createElement('div');
 	newBlockDiv.id="characterBlock";
-	document.getElementById('characterContainer').appendChild(newBlockDiv);
 	
 	var newCloseButton = document.createElement('button');
 	newCloseButton.type="button";
 	newCloseButton.id="closeButton";
-	newCloseButton.onclick=function(){this.parentElement.parentElement.removeChild(this.parentElement)};
+	newCloseButton.onclick=function(){removeDiv(newBlockDiv)};
 	newCloseButton.append("\u2716");
-	
 	newBlockDiv.appendChild(newCloseButton);
 	
 	var newDetailsDiv = document.createElement('div');
 	newDetailsDiv.id="characterDetails";
 	
+		
+		var newInitiativeP = document.createElement('p');
+		newInitiativeP.id="initiativeP";
+		newInitiativeP.append(document.getElementById("addInitiative").value + "\xa0");
+		var newNameDiv = document.createElement('div');
+		newNameDiv.id = "nameDiv";
 		var newNameP = document.createElement('p');
+		newNameP.id="nameP";
 		var newName = document.createElement('input');
 		newName.type="text";
 		newName.id="name";
 		newName.value = document.getElementById("addName").value;
 		newNameP.append(newName);
-		newDetailsDiv.appendChild(newNameP);
+		newNameDiv.appendChild(newInitiativeP);
+		newNameDiv.appendChild(newNameP);
+		newDetailsDiv.appendChild(newNameDiv);
 	
 		var newDetailP = document.createElement('p');
 		
@@ -79,16 +93,67 @@ function addCharacter(){
 		
 	newBlockDiv.appendChild(newNotesDiv);	
 	
+	var newCharacter = new Character(newBlockDiv, document.getElementById("addInitiative").value);
+	placeByInitiative(newCharacter);
 	clearAddDetails();
 	
 	return false;
 }
 
+function placeByInitiative(newCharacter){
+	var placed = false; 
+
+	if (initiativeArray.length == 0){
+		initiativeArray.push(newCharacter);
+		document.getElementById('characterContainer').appendChild(newCharacter.getDiv());
+		placed = true;
+		alert("it was empty");
+	}
+	else {
+		for (i = 0; i < initiativeArray.length; i++){
+			if (newCharacter.getInitiative() > initiativeArray[i].getInitiative()){
+				document.getElementById('characterContainer').insertBefore(newCharacter.getDiv(), initiativeArray[i].getDiv());
+				initiativeArray.splice(i, 0, newCharacter);
+				placed = true;
+				break;
+			}
+			if (newCharacter.getInitiative() == initiativeArray[i].getInitiative()){
+				newCharacter.setInitiative(newCharacter.getInitiative() - 0.1);
+				document.getElementById('characterContainer').insertBefore(newCharacter.getDiv(), initiativeArray[i].getDiv().nextSibling);
+				initiativeArray.splice(i, 0, newCharacter);
+				placed = true;
+				break;
+			}
+		}
+		
+	}
+	if (!placed){
+		initiativeArray.push(newCharacter);
+		document.getElementById('characterContainer').appendChild(newCharacter.getDiv());
+		placed = true;
+	}
+}
+
+function removeDiv(characterDiv){
+	initiativeArray.splice(locateDivIndex(characterDiv), 1);
+	characterDiv.parentElement.removeChild(characterDiv);
+	
+}
+
+function locateDivIndex(characterDiv){
+	for (i = 0; i < initiativeArray.length; i++){
+		if (initiativeArray[i].getDiv() == characterDiv){
+			return i;
+		}
+	}
+	return null;
+}
 
 function clearAddDetails(){
 	document.getElementById("addName").value = "";
 	document.getElementById("addAC").value = "";
 	document.getElementById("addMaxHP").value = "";
+	document.getElementById("addInitiative").value = "";
 	resetAddFocus();
 }
 

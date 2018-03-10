@@ -53,10 +53,24 @@ textarea {
 	/*text-align: right;*/
 }	
 
+#nameDiv{
+	display: inline-block;
+}
+
+#initiativeP{
+	display: inline-block;
+	vertical-align: 4px; 
+}
+
+#nameP{
+	display: inline-block;
+}
+
 #name{
+	display: inline-block;
 	text-align: left;
-	width: 90%;
-	max-width: 550px;
+	width: 40%;
+	/*max-width: 550px;*/
 	font-size: 25px;
 	font-family: "OptimusPrincepsSemiBold", "Goudy Old Style", Calibri, sans-serif;
 	/*text-decoration: none;
@@ -86,7 +100,7 @@ textarea {
 	position: fixed;
 	left: 0px;
 	bottom: 0px;
-	height: 90px;
+	height: 120px;
 	width: 100%;
 }
 
@@ -94,7 +108,7 @@ textarea {
 	display: none;
 	border-radius: 7px;
     border: 2px solid black;
-	padding-top: 10px;
+	padding-top: 35px;
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: gray;
@@ -121,13 +135,6 @@ textarea {
 #adder:hover + #characterAdder{
 	display: block;
 }
-
-#addButtonWrapper{
-	display: flex;
-	justify-content: center;
-	padding: 5px;
-}
-
 
 
 

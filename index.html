@@ -3,6 +3,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script type="text/javascript" src="js/addCharacter.js"></script>
+		<script type="text/javascript" src="js/characterDiv.js"></script>
 	</head>
 	
 	<body>
@@ -13,14 +14,12 @@
 			<p id="adder">hover to add character</p>
 			<div id="characterAdder">
 				<form id = "addDetails" onsubmit="return addCharacter()">
-					Name: <input type="text" id="addName">
-					AC: <input type="text" id="addAC"> 
-					Max HP: <input type="text" id="addMaxHP"> 
+					<input type="text" id="addName" placeholder="Name" autocomplete="off">
+					<input type="text" id="addAC" placeholder="AC" autocomplete="off"> 
+					<input type="text" id="addMaxHP" placeholder="Max HP" autocomplete="off"> 
+					<input type="text" id="addInitiative" placeholder="Initiative" autocomplete="off">
 					<input type="submit"  value="Submit" style="display: none;">
 				</form>
-				<div id="addButtonWrapper">
-					<button id="addButton" onclick="addCharacter()"> add </button>
-				</div>
 			</div>
 		</div>
 		
