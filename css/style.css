@@ -41,6 +41,23 @@ textarea {
 	background-color: white;
 }
 
+.helpText{
+	float: left;
+	display: none;
+	width: 95%;
+	background-color: white;
+	padding: 5px;
+	border: 2px dotted black;
+}
+
+#hasteHelp:hover ~ #hasteText{
+	display: inline-block;
+}
+
+#slowHelp:hover ~ #slowText{
+	display: inline-block;
+}
+
 #characterContainer{
 	padding-top: 20px;
 }
