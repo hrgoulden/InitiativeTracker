@@ -9,9 +9,13 @@ class Actor{
 		this.index = index;
 	}
 	
-	setDiv(newDiv){ this.div=newDiv; }
+	setDiv(newDiv){
+		this.div=newDiv; 
+	}
 
-	setIndex(newIndex){ this.index=newIndex; }
+	setIndex(newIndex){
+		this.index=newIndex; 
+	}
 }
 
 var currentActor = new Actor(null, null);

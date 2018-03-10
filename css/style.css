@@ -65,7 +65,7 @@ textarea {
 #characterBlock{
 	border-radius: 7px;
     border: 2px solid black;
-	max-width: 600px;
+	width: 90%;
 	padding-left: 10px;
 	padding-right: 10px;
 	background-color: #d2a479;
@@ -105,6 +105,10 @@ textarea {
 	vertical-align: 4px; 
 }
 
+#initiative{
+	width: 20px;
+}
+
 #nameP{
 	display: inline-block;
 }
@@ -113,11 +117,8 @@ textarea {
 	display: inline-block;
 	text-align: left;
 	width: 90%;
-	/*max-width: 550px;*/
 	font-size: 25px;
 	font-family: "OptimusPrincepsSemiBold", "Goudy Old Style", Calibri, sans-serif;
-	/*text-decoration: none;
-	/*border: 3px solid #cccccc;*/
 }
 
 #maxHP, #currentHP{
