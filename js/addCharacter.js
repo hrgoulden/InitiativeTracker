@@ -107,7 +107,6 @@ function placeByInitiative(newCharacter){
 		initiativeArray.push(newCharacter);
 		document.getElementById('characterContainer').appendChild(newCharacter.getDiv());
 		placed = true;
-		alert("it was empty");
 	}
 	else {
 		for (i = 0; i < initiativeArray.length; i++){
