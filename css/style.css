@@ -59,7 +59,13 @@ textarea {
 }
 
 #characterContainer{
+	position: relative;
 	padding-top: 20px;
+	z-index: 50;
+}
+
+#characterContainer:hover{
+	z-index: 150;
 }
 
 #characterBlock{
@@ -146,6 +152,7 @@ textarea {
 	bottom: 0px;
 	height: 120px;
 	width: 100%;
+	z-index: 100;
 }
 
 #characterAdder{
