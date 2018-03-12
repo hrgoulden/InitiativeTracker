@@ -37,6 +37,7 @@ textarea {
 	font-weight: bold;
 }
 
+/*mouse hover feedback*/
 .helpTab:hover{
 	background-color: white;
 }
@@ -50,10 +51,12 @@ textarea {
 	border: 2px dotted black;
 }
 
+/*displays hasteText when hovering over the hasteHelp tab*/
 #hasteHelp:hover ~ #hasteText{
 	display: inline-block;
 }
 
+/*displays slowText when hovering over slowHelp tab*/
 #slowHelp:hover ~ #slowText{
 	display: inline-block;
 }
@@ -64,6 +67,8 @@ textarea {
 	z-index: 50;
 }
 
+/*pulls characterContainer forward when hovered over to avoid 
+  obstruction by invisible characterAdder*/
 #characterContainer:hover{
 	z-index: 150;
 }
@@ -92,15 +97,11 @@ textarea {
 	background-color: black;
 }
 
+/*mouse hover feedback*/
 #closeButton:hover{
 	color: black;
 	background-color: white;
 }
-
-#characterDetails{
-	/*float: left;
-	/*text-align: right;*/
-}	
 
 #nameDiv{
 	display: inline-block;
@@ -181,10 +182,12 @@ textarea {
 	width: 120px;
 }
 
+/*keeps characterAdder visible while hovered over*/
 #characterAdder:hover{
 	display: block;
 }
 
+/*makes characterAdder appear when adder is hovered over*/
 #adder:hover + #characterAdder{
 	display: block;
 }

@@ -1,7 +1,10 @@
+//consistent array contains divs in initiative order
 var initiativeArray = [];
 
+//constructs new characterBlock based on user input
 function addCharacter(){
 	
+	//prevents blank characterBlocks from being added
 	if ((document.getElementById("addName").value == "") &&
 	(document.getElementById("addAC").value == "") &&
 	(document.getElementById("addMaxHP").value == "")){
@@ -9,6 +12,7 @@ function addCharacter(){
 		return false;
 	}
 	
+	//catch blank or non-number initiative values
 	if ((document.getElementById("addInitiative").value == "") ||
 	isNaN(document.getElementById("addInitiative").value)){
 		return false;
@@ -27,13 +31,14 @@ function addCharacter(){
 	var newDetailsDiv = document.createElement('div');
 	newDetailsDiv.id="characterDetails";
 	
-		
 		var newInitiativeP = document.createElement('p');
 		newInitiativeP.id="initiativeP";
 		var newInitiative = document.createElement('input');
 		newInitiative.type="text";
 		newInitiative.id="initiative";
 		newInitiative.value = (document.getElementById("addInitiative").value);
+		
+		//if initiative is manually changed, re-places character block accordingly
 		newInitiative.addEventListener("keyup", function(event) {
 				event.preventDefault();
 				if ((event.keyCode === 13) && (!isNaN(newInitiative.value))){
@@ -108,6 +113,8 @@ function addCharacter(){
 		var newNotesArea = document.createElement('textarea');
 		newNotesArea.rows="1";
 		newNotesArea.placeholder="NOTES";
+		
+		//prevents textarea overflow in Firefox
 		newNotesArea.style.overflowX = "hidden";
 		newNotesDiv.append(newNotesArea);
 		
@@ -118,9 +125,11 @@ function addCharacter(){
 	return false;
 }
 
+//places new characterBlocks based on initiative scores
 function placeByInitiative(newCharacter){
 	var placed = false; 
 	
+	//removes a characterBlock that has been previously placed
 	if (initiativeArray.includes(newCharacter)){
 		initiativeArray.splice(initiativeArray.indexOf(newCharacter), 1);
 	}
@@ -154,11 +163,13 @@ function placeByInitiative(newCharacter){
 	}
 }
 
+//deletes a characterBlock div while also removing it from initiativeArray 
 function removeDiv(characterDiv){
 	initiativeArray.splice(initiativeArray.indexOf(characterDiv), 1);
 	characterDiv.parentElement.removeChild(characterDiv);
 }
 
+//sets background colors (including inputs) to a given value
 function setBackground(characterDiv, hexCode){
 	characterDiv.style.backgroundColor = hexCode;
 	characterDiv.querySelector("#name").style.backgroundColor = hexCode;
@@ -168,6 +179,7 @@ function setBackground(characterDiv, hexCode){
 	characterDiv.querySelector("#initiative").style.backgroundColor = hexCode;
 }
 
+//empties characterAdder inputs after use
 function clearAddDetails(){
 	document.getElementById("addName").value = "";
 	document.getElementById("addAC").value = "";
@@ -176,6 +188,8 @@ function clearAddDetails(){
 	resetAddFocus();
 }
 
+//sets mouse focus to the first characterAdder input to allow multiple characters
+//to be added efficiently
 function resetAddFocus(){
 	document.getElementById("addName").focus();
 	document.getElementById("addName").select();
