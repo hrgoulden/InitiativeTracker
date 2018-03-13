@@ -1,5 +1,7 @@
 # InitiativeTracker
 
+Hosted online at: https://hrgoulden.github.io/InitiativeTracker/
+
 The intention for this project was to construct a tool for use with Dungeons & Dragons, 5th edition. With this initiative tracker, a Dungeon Master (or DM) should have an easier time keeping track of multiple characters participating during combat.
 
 Characters can be added to the tracker using the "hover to add character" bar at the bottom of the page. After hovering the mouse over this tab, options for adding a character will appear: Name, AC (Armor Class), HP (Hit Points), and Initiative. Feel free to leave a few of these blank (you might prefer to let your players keep track of their AC and HP), but ensure that a value is entered for Initiative and at least one other field. The value for Initiative must be a number, but the other fields have no such limitations.
@@ -24,4 +26,4 @@ TODO
 - [x] Implement Turn Tracker to specify which character should be acting
 - [x] Change characterBlock background color to emphasize low or zero hp
 - [x] Add "Haste" and "Slow" explanation windows
-- [ ] Add gh-pages branch and add link to readme
+- [x] Add gh-pages branch and add link to readme
