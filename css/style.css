@@ -62,14 +62,15 @@ textarea {
 }
 
 #characterContainer{
-	position: relative;
+	position: inline-block;
 	padding-top: 20px;
-	z-index: 50;
+	/*z-index: 50;*/
 }
 
 /*pulls characterContainer forward when hovered over to avoid 
   obstruction by invisible characterAdder*/
 #characterContainer:hover{
+	position: relative;
 	z-index: 150;
 }
 
